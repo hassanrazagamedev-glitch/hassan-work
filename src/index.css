@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Modern Dark Portfolio Design System
+Inspired by professional developer portfolios with dark themes and vibrant accents
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme as primary */
+    --background: 220 15% 8%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 12%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Orange accent as primary brand color */
+    --primary: 35 91% 62%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Darker gray for secondary elements */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 91% 62%;
+    --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 35 91% 62%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --hero-glow: 35 91% 62%;
+    --section-background: 220 15% 10%;
+    --gradient-primary: linear-gradient(135deg, hsl(35 91% 62%), hsl(25 95% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 8%), hsl(220 15% 12%));
+    --shadow-glow: 0 0 40px hsl(35 91% 62% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(220 15% 5% / 0.8);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,42 +68,26 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  .light {
+    /* Light theme variant (optional) */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --primary: 35 91% 55%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 220 15% 93%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 35 91% 55%;
+    --accent-foreground: 0 0% 98%;
+    --border: 220 15% 88%;
+    --input: 220 15% 93%;
+    --ring: 35 91% 55%;
+    --section-background: 220 15% 96%;
+    --shadow-glow: 0 0 40px hsl(35 91% 55% / 0.2);
+    --shadow-card: 0 10px 30px -10px hsl(220 15% 80% / 0.3);
   }
 }
 
@@ -100,6 +97,122 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  .hero-section {
+    background: var(--gradient-subtle);
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .section-padding {
+    @apply px-6 lg:px-12 py-16 lg:py-24;
+  }
+
+  .hero-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-elegant {
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    transition: var(--transition-smooth);
+  }
+
+  .card-elegant:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    border: none;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
+    transition: var(--transition-smooth);
+  }
+
+  .btn-secondary:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-2px);
+  }
+
+  .navbar-blur {
+    backdrop-filter: blur(20px);
+    background: hsl(var(--background) / 0.8);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .timeline-line {
+    position: relative;
+  }
+
+  .timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: hsl(var(--primary));
+  }
+
+  .skill-badge {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .skill-badge:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-2px);
   }
 }
