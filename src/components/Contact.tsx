@@ -314,9 +314,16 @@ const Contact = () => {
                   <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
                     Get my complete resume with detailed experience, projects, and technical skills information.
                   </p>
-                  <Button variant="outline" className="btn-secondary w-full group hover:scale-105 transition-all duration-300">
-                    <Download className="h-4 w-4 mr-2 group-hover:-translate-y-1 transition-transform duration-300" />
-                    Download PDF
+                  <Button variant="outline" className="btn-secondary w-full group hover:scale-105 transition-all duration-300" asChild>
+                    <a 
+                      href="/Resume_M_Hassan_Raza.pdf" 
+                      download="Muhammad_Hassan_Raza_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="h-4 w-4 mr-2 group-hover:-translate-y-1 transition-transform duration-300" />
+                      Download PDF
+                    </a>
                   </Button>
                 </div>
               </div>

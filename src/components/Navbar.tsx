@@ -70,9 +70,16 @@ const Navbar = () => {
             >
               <Github className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm" className="btn-secondary">
-              <Download className="h-4 w-4 mr-2" />
-              Resume
+            <Button variant="outline" size="sm" className="btn-secondary" asChild>
+              <a 
+                href="/Resume_M_Hassan_Raza.pdf" 
+                download="Muhammad_Hassan_Raza_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Resume
+              </a>
             </Button>
           </div>
 
@@ -115,9 +122,16 @@ const Navbar = () => {
                 >
                   <Github className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="sm" className="btn-secondary">
-                  <Download className="h-4 w-4 mr-2" />
-                  Resume
+                <Button variant="outline" size="sm" className="btn-secondary" asChild>
+                  <a 
+                    href="/Resume_M_Hassan_Raza.pdf" 
+                    download="Muhammad_Hassan_Raza_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Resume
+                  </a>
                 </Button>
               </div>
             </div>

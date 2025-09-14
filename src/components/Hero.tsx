@@ -67,9 +67,17 @@ const Hero = () => {
                 variant="outline" 
                 size="lg"
                 className="btn-secondary px-8 py-4 text-lg font-semibold group"
+                asChild
               >
-                <Download className="mr-2 h-5 w-5 group-hover:-translate-y-1 transition-transform" />
-                Download Resume
+                <a 
+                  href="/Resume_M_Hassan_Raza.pdf" 
+                  download="Muhammad_Hassan_Raza_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-5 w-5 group-hover:-translate-y-1 transition-transform" />
+                  Download Resume
+                </a>
               </Button>
             </div>
 
