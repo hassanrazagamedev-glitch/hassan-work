@@ -8,62 +8,63 @@ import rollImage from '@/assets/project-rolling.jpg';
 
 const Projects = () => {
   const projects = [
-    {
-      title: 'Idle Restaurant Tycoon: Match3',
-      description: '🍔 Idle Restaurant Tycoon: Match3 – Build Your Food Empire, One Match at a Time! 🍕.Step into the delicious world of Idle Restaurant Tycoon: Match3, the ultimate fusion of idle simulation and satisfying match3 puzzle gameplay. If you’ve ever dreamed of building your own restaurant empire while tackling entertaining food-themed puzzles, then restaurant tycoon match3 is the game you’ve been waiting for.',
-      image: dirtbikeImage,
-      tags: ['Unity 3D', 'Idle', 'Mobile', 'Match3'],
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.idle.restaurant.food.tycoon.game&hl=en_US',
-      featured: true,
-      stats: { downloads: '50K+', rating: 4.5, users: '50K+' },
-      color: 'from-orange-500 to-red-500',
-      category: 'Idle'
-    },
-    {
-      title: 'Find the Difference',
-      description: 'Engaging puzzle game that challenges players to spot differences between two similar images. Features hundreds of levels with increasing difficulty, beautiful artwork, and AI-powered level generation.',
-      image: differenceImage,
-      tags: ['Unity 2D', 'Puzzle', 'Casual', 'UI/UX'],
-      playStoreUrl: 'https://play.google.com',
-      featured: false,
-      stats: { downloads: '500K+', rating: 4.3, users: '200K+' },
-      color: 'from-blue-500 to-purple-500',
-      category: 'Puzzle Game'
-    },
-    {
-      title: 'Draw One Part Tricky Puzzle',
-      description: 'Creative brain teaser where players complete drawings by adding the missing piece. Combines artistic creativity with logical thinking across hundreds of unique puzzles with progressive difficulty curves.',
-      image: drawImage,
-      tags: ['Unity 2D', 'Brain Teaser', 'Creative', 'Art'],
-      playStoreUrl: 'https://play.google.com',
-      featured: true,
-      stats: { downloads: '250K+', rating: 4.6, users: '120K+' },
-      color: 'from-green-500 to-teal-500',
-      category: 'Creative Puzzle'
-    },
-    {
-      title: 'Real Sniper Gun Shooting Epic Games',
-      description: 'Realistic first-person shooter with precision aiming mechanics, multiple weapon systems, and challenging missions. Features advanced AI, stunning 3D environments, and competitive multiplayer modes.',
-      image: sniperImage,
-      tags: ['Unity 3D', 'FPS', 'Action', 'Shooting'],
-      playStoreUrl: 'https://play.google.com',
-      featured: false,
-      stats: { downloads: '1M+', rating: 4.4, users: '500K+' },
-      color: 'from-purple-500 to-pink-500',
-      category: 'Action FPS'
-    },
-    {
-      title: 'Balls Game - Rolling 3D',
-      description: 'Realistic first-person shooter with precision aiming mechanics, multiple weapon systems, and challenging missions. Features advanced AI, stunning 3D environments, and competitive multiplayer modes.',
-      image: rollImage,
-      tags: ['Unity 3D', 'FPS', 'Action', 'Shooting'],
-      playStoreUrl: 'https://play.google.com',
-      featured: false,
-      stats: { downloads: '1M+', rating: 4.4, users: '500K+' },
-      color: 'from-purple-500 to-pink-500',
-      category: 'Action FPS'
-    }
-  ];
+  {
+    title: 'Idle Restaurant Tycoon: Match3',
+    description: '🍔 Idle Restaurant Tycoon: Match3 – Build your food empire, one match at a time! A hybrid of idle simulation and match-3 puzzle gameplay where you manage restaurants while solving tasty puzzles.',
+    image: restaurantImage, // Replace with proper restaurant image asset
+    tags: ['Unity 3D', 'Idle', 'Mobile', 'Match3'],
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.idle.restaurant.food.tycoon.game&hl=en_US',
+    featured: true,
+    stats: { downloads: '50K+', rating: 4.5, users: '50K+' },
+    color: 'from-orange-500 to-red-500',
+    category: 'Idle'
+  },
+  {
+    title: 'Find the Difference',
+    description: 'Engaging puzzle game challenging players to spot differences between two images. Features hundreds of levels, increasing difficulty, beautiful artwork, and AI-powered level generation.',
+    image: differenceImage,
+    tags: ['Unity 2D', 'Puzzle', 'Casual', 'UI/UX'],
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.find.differences.spot.hidden.difference.puzzle',
+    featured: false,
+    stats: { downloads: '500K+', rating: 4.3, users: '200K+' },
+    color: 'from-blue-500 to-purple-500',
+    category: 'Puzzle'
+  },
+  {
+    title: 'Draw One Part: Tricky Puzzle',
+    description: 'A creative brain teaser where players complete drawings by adding missing parts. Blends artistic creativity with logical thinking across hundreds of puzzles with progressive difficulty.',
+    image: drawImage,
+    tags: ['Unity 2D', 'Brain Teaser', 'Creative', 'Art'],
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.draw.one.part.tricky.puzzle',
+    featured: true,
+    stats: { downloads: '250K+', rating: 4.6, users: '120K+' },
+    color: 'from-green-500 to-teal-500',
+    category: 'Creative'
+  },
+  {
+    title: 'Real Sniper Gun Shooting',
+    description: 'Realistic first-person shooter with precision aiming mechanics, multiple weapons, and challenging missions. Includes advanced AI, immersive environments, and competitive multiplayer modes.',
+    image: sniperImage,
+    tags: ['Unity 3D', 'FPS', 'Action', 'Shooter'],
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.real.sniper.gun.shooting.fps',
+    featured: false,
+    stats: { downloads: '1M+', rating: 4.4, users: '500K+' },
+    color: 'from-purple-500 to-pink-500',
+    category: 'Action'
+  },
+  {
+    title: 'Balls Game - Rolling 3D',
+    description: 'Dynamic 3D rolling ball game with physics-based controls, obstacle courses, and endless challenges. Test your reflexes with progressively harder levels and smooth arcade gameplay.',
+    image: rollImage,
+    tags: ['Unity 3D', 'Casual', 'Arcade', 'Physics'],
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.balls.rolling.arcade.game',
+    featured: false,
+    stats: { downloads: '500K+', rating: 4.2, users: '250K+' },
+    color: 'from-yellow-500 to-orange-500',
+    category: 'Arcade'
+  }
+];
+
 
   const projectStats = [
     { label: 'Total Downloads', value: '2M+', icon: <Download className="h-5 w-5" /> },
