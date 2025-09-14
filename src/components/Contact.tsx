@@ -60,8 +60,8 @@ const Contact = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+92-303-3698469',
+      link: 'tel:+923033698469',
       description: 'Call me directly',
       color: 'from-green-500 to-emerald-500'
     },
