@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, ExternalLink, Download } from 'lucide-react';
+import { ArrowDown, ExternalLink, Download, Play, Code, Gamepad2 } from 'lucide-react';
 import heroImage from '@/assets/hero-portrait.jpg';
 
 const Hero = () => {
@@ -11,77 +11,171 @@ const Hero = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const stats = [
+    { value: '5+', label: 'Years Experience', icon: <Code className="h-5 w-5" /> },
+    { value: '10+', label: 'Games Published', icon: <Gamepad2 className="h-5 w-5" /> },
+    { value: '1M+', label: 'Downloads', icon: <Play className="h-5 w-5" /> },
+  ];
+
   return (
-    <section id="home" className="hero-section flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="hero-section flex items-center justify-center relative overflow-hidden min-h-screen">
       <div className="container mx-auto section-padding">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="animate-fade-in">
-            <div className="mb-6">
-              <p className="text-primary text-lg font-medium mb-4">👋 Hello, I'm</p>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-4">
-                Muhammad Hassan{' '}
-                <span className="text-gradient">Raza</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground mb-6">
-                🎮 Game Developer · Unity Specialist · Hybrid Genre Innovator
-              </p>
+          <div className="lg:col-span-7 animate-fade-in">
+            {/* Status Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8">
+              <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
+              Available for new opportunities
             </div>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              I build scalable 2D and 3D games that blend creativity with technical precision. 
-              Currently at 9D Technologies, I'm crafting an Idle Tycoon game with Match-3 mechanics 
-              using Unity, Zenject, and UniRx.
+            <div className="mb-8">
+              <p className="text-primary text-lg font-medium mb-4 tracking-wide">👋 Hello, I'm</p>
+              <h1 className="text-4xl lg:text-7xl font-bold mb-6 leading-tight">
+                Muhammad Hassan{' '}
+                <span className="text-gradient block lg:inline">Raza</span>
+              </h1>
+              <div className="relative">
+                <p className="text-xl lg:text-3xl text-muted-foreground mb-8 font-light leading-relaxed">
+                  <span className="text-primary font-semibold">🎮 Game Developer</span> · 
+                  <span className="text-primary font-semibold"> Unity Specialist</span> · 
+                  <span className="text-primary font-semibold"> Hybrid Genre Innovator</span>
+                </p>
+              </div>
+            </div>
+
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl">
+              I craft <span className="text-primary font-semibold">scalable 2D and 3D games</span> that blend creativity with technical precision. 
+              Currently at <span className="text-primary font-semibold">9D Technologies</span>, I'm building an innovative 
+              <span className="text-primary font-semibold"> Idle Tycoon game with Match-3 mechanics</span> using Unity, Zenject, and UniRx.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button 
                 onClick={scrollToProjects}
-                className="btn-primary px-8 py-3 text-lg font-semibold"
+                size="lg"
+                className="btn-primary px-8 py-4 text-lg font-semibold group relative overflow-hidden"
               >
-                View Projects
-                <ExternalLink className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center">
+                  View My Projects
+                  <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               <Button 
                 variant="outline" 
-                className="btn-secondary px-8 py-3 text-lg font-semibold"
+                size="lg"
+                className="btn-secondary px-8 py-4 text-lg font-semibold group"
               >
-                <Download className="mr-2 h-5 w-5" />
+                <Download className="mr-2 h-5 w-5 group-hover:-translate-y-1 transition-transform" />
                 Download Resume
               </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 mb-12">
+              {stats.map((stat, index) => (
+                <div key={stat.label} className="text-center lg:text-left animate-scale-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="flex items-center justify-center lg:justify-start mb-2">
+                    <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center mr-2">
+                      <span className="text-primary">{stat.icon}</span>
+                    </div>
+                    <div className="text-2xl lg:text-3xl font-bold text-gradient">{stat.value}</div>
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+                </div>
+              ))}
             </div>
 
             <Button
               variant="ghost"
               onClick={scrollToAbout}
-              className="mt-12 text-muted-foreground hover:text-primary animate-float"
+              className="text-muted-foreground hover:text-primary animate-float group"
             >
-              <ArrowDown className="h-6 w-6" />
+              <ArrowDown className="h-6 w-6 group-hover:translate-y-1 transition-transform" />
+              <span className="ml-2 text-sm">Scroll to learn more</span>
             </Button>
           </div>
 
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-scale-in">
+          {/* Visual Section */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end animate-scale-in">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden hero-glow">
-                <img 
-                  src={heroImage} 
-                  alt="Muhammad Hassan Raza - Game Developer"
-                  className="w-full h-full object-cover"
-                />
+              {/* Main Image Container */}
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+                {/* Rotating Border */}
+                <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-75 animate-spin" style={{ animationDuration: '20s' }}></div>
+                <div className="absolute inset-2 rounded-full bg-background"></div>
+                
+                {/* Profile Image */}
+                <div className="absolute inset-4 rounded-full overflow-hidden hero-glow">
+                  <img 
+                    src={heroImage} 
+                    alt="Muhammad Hassan Raza - Game Developer"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Floating Elements */}
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/20 rounded-2xl blur-xl animate-float rotate-12"></div>
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent/15 rounded-2xl blur-2xl animate-float" style={{ animationDelay: '2s', transform: 'rotate(-15deg)' }}></div>
+                
+                {/* Orbiting Icons */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '30s' }}>
+                  <div className="absolute -top-4 left-1/2 w-12 h-12 bg-card/80 backdrop-blur-sm rounded-full border border-primary/20 flex items-center justify-center">
+                    <Code className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }}>
+                  <div className="absolute top-1/2 -right-4 w-12 h-12 bg-card/80 backdrop-blur-sm rounded-full border border-primary/20 flex items-center justify-center">
+                    <Gamepad2 className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '35s' }}>
+                  <div className="absolute -bottom-4 left-1/4 w-12 h-12 bg-card/80 backdrop-blur-sm rounded-full border border-primary/20 flex items-center justify-center">
+                    <Play className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-float"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+
+              {/* Technology Pills */}
+              <div className="absolute -right-4 top-1/4 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 text-sm font-medium text-primary">
+                  Unity 3D
+                </div>
+              </div>
+              
+              <div className="absolute -left-6 top-3/4 animate-float" style={{ animationDelay: '3s' }}>
+                <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 text-sm font-medium text-primary">
+                  C# Expert
+                </div>
+              </div>
+
+              <div className="absolute right-1/4 -bottom-6 animate-float" style={{ animationDelay: '2s' }}>
+                <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 text-sm font-medium text-primary">
+                  Zenject
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Background Elements */}
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/6 w-[32rem] h-[32rem] bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/3 rounded-full blur-2xl animate-float" style={{ animationDelay: '5s' }}></div>
+      </div>
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 -z-5 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
       </div>
     </section>
   );
