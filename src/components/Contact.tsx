@@ -112,16 +112,16 @@ const Contact = () => {
     {
       icon: <FiverrIcon />,
       label: 'Fiverr',
-      username: '@your-fiverr-username',
-      url: 'https://www.fiverr.com/your-fiverr-username',
+      username: '@hassan_raza_dev',
+      url: 'https://www.fiverr.com/s/zWRYXWg',
       color: 'from-green-500 to-emerald-600',
       description: 'Freelance game dev services'
     },
     {
       icon: <UpworkIcon />,
       label: 'Upwork',
-      username: '@your-upwork-username',
-      url: 'https://www.upwork.com/freelancers/~your-upwork-id',
+      username: 'Hassan',
+      url: 'https://www.upwork.com/freelancers/~01be4046d599a8ef82?mp_source=share',
       color: 'from-teal-500 to-cyan-600',
       description: 'Hire me for long-term projects'
     }
