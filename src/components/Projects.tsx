@@ -21,18 +21,6 @@ const Projects = () => {
       category: 'Idle',
     },
     {
-      title: 'Find the Difference',
-      description:
-        'Engaging puzzle game challenging players to spot differences between two images. Features hundreds of levels, increasing difficulty, beautiful artwork, and AI-powered level generation.',
-      image: differenceImage,
-      tags: ['Unity 2D', 'Puzzle', 'Casual', 'UI/UX'],
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.find.differences.spot.hidden.difference.puzzle',
-      featured: false,
-      stats: { downloads: '500K+', rating: 4.3, users: '200K+' },
-      color: 'from-blue-500 to-purple-500',
-      category: 'Puzzle',
-    },
-    {
       title: 'Draw One Part: Tricky Puzzle',
       description:
         'A creative brain teaser where players complete drawings by adding missing parts. Blends artistic creativity with logical thinking across hundreds of puzzles with progressive difficulty.',
@@ -44,6 +32,19 @@ const Projects = () => {
       color: 'from-green-500 to-teal-500',
       category: 'Creative',
     },
+    {
+      title: 'Find the Difference',
+      description:
+        'Engaging puzzle game challenging players to spot differences between two images. Features hundreds of levels, increasing difficulty, beautiful artwork, and AI-powered level generation.',
+      image: differenceImage,
+      tags: ['Unity 2D', 'Puzzle', 'Casual', 'UI/UX'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.find.differences.spot.hidden.difference.puzzle',
+      featured: false,
+      stats: { downloads: '500K+', rating: 4.3, users: '200K+' },
+      color: 'from-blue-500 to-purple-500',
+      category: 'Puzzle',
+    },
+    
     {
       title: 'Real Sniper Gun Shooting',
       description:
