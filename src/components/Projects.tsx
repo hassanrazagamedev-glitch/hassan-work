@@ -24,7 +24,7 @@ const Projects = () => {
     description: 'Engaging puzzle game challenging players to spot differences between two images. Features hundreds of levels, increasing difficulty, beautiful artwork, and AI-powered level generation.',
     image: differenceImage,
     tags: ['Unity 2D', 'Puzzle', 'Casual', 'UI/UX'],
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.find.differences.spot.hidden.difference.puzzle',
+playStoreUrl: 'https://play.google.com/store/apps/details?id=com.draw.puzzle.one.part.missing',
     featured: false,
     stats: { downloads: '500K+', rating: 4.3, users: '200K+' },
     color: 'from-blue-500 to-purple-500',
