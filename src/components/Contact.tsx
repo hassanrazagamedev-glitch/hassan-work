@@ -11,7 +11,10 @@ import {
   Linkedin, 
   Github, 
   Download,
-  ExternalLink 
+  ExternalLink,
+  MessageSquare,
+  Clock,
+  CheckCircle
 } from 'lucide-react';
 
 const Contact = () => {
@@ -30,12 +33,12 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon!",
+        title: "Message Sent Successfully! 🎉",
+        description: "Thanks for reaching out. I'll get back to you within 24 hours!",
       });
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitting(false);
-    }, 1000);
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,19 +53,25 @@ const Contact = () => {
       icon: <Mail className="h-5 w-5" />,
       label: 'Email',
       value: 'hassan.raza@gamedev.com',
-      link: 'mailto:hassan.raza@gamedev.com'
+      link: 'mailto:hassan.raza@gamedev.com',
+      description: 'Send me an email',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: 'Phone',
       value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      link: 'tel:+15551234567',
+      description: 'Call me directly',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: 'Location',
       value: 'Remote / Global',
-      link: null
+      link: null,
+      description: 'Available worldwide',
+      color: 'from-purple-500 to-pink-500'
     }
   ];
 
@@ -70,49 +79,90 @@ const Contact = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
+      username: '@muhammad-hassan-raza',
       url: 'https://linkedin.com/in/muhammad-hassan-raza',
-      color: 'text-blue-600'
+      color: 'from-blue-600 to-blue-700',
+      description: 'Professional network'
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: 'GitHub',
+      username: '@hassan-game-dev',
       url: 'https://github.com/muhammad-hassan-raza',
-      color: 'text-gray-400'
+      color: 'from-gray-700 to-gray-800',
+      description: 'Open source projects'
     },
     {
       icon: <ExternalLink className="h-5 w-5" />,
       label: 'Play Store',
+      username: 'Hassan Raza Games',
       url: 'https://play.google.com/store/apps/developer?id=Hassan+Raza',
-      color: 'text-green-600'
+      color: 'from-green-600 to-green-700',
+      description: 'Published games'
     }
   ];
 
+  const features = [
+    { icon: <Clock className="h-5 w-5" />, text: '24h Response Time' },
+    { icon: <MessageSquare className="h-5 w-5" />, text: 'Free Consultation' },
+    { icon: <CheckCircle className="h-5 w-5" />, text: 'Project Discussion' },
+  ];
+
   return (
-    <section id="contact" className="section-padding bg-muted/30">
+    <section id="contact" className="section-padding bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+              <MessageSquare className="h-4 w-4 mr-2" />
+              Get In Touch
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
               Let's <span className="text-gradient">Connect</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Ready to discuss your next game development project? I'm always excited to explore 
-              new opportunities and collaborate with passionate teams.
+              new opportunities and collaborate with passionate teams to create amazing gaming experiences.
             </p>
+          </div>
+
+          {/* Features Banner */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            {features.map((feature, index) => (
+              <div 
+                key={feature.text}
+                className="card-elegant p-6 text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
+                  <span className="text-primary group-hover:scale-125 transition-transform duration-300">
+                    {feature.icon}
+                  </span>
+                </div>
+                <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {feature.text}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="card-elegant p-8 animate-slide-up">
-                <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <div className="card-elegant p-8 lg:p-10 animate-slide-up bg-card/80 backdrop-blur-sm">
+                <div className="mb-8">
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-gradient">Send Me a Message</h3>
+                  <p className="text-muted-foreground">
+                    Share your project ideas, ask questions, or just say hello. I'd love to hear from you!
+                  </p>
+                </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Your Name
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="block text-sm font-semibold text-foreground">
+                        Your Name *
                       </label>
                       <Input
                         id="name"
@@ -121,13 +171,13 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="John Doe"
                         required
-                        className="w-full"
+                        className="w-full h-12 bg-muted/50 border-border focus:border-primary transition-colors"
                       />
                     </div>
                     
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email Address
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-foreground">
+                        Email Address *
                       </label>
                       <Input
                         id="email"
@@ -137,70 +187,89 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="john@example.com"
                         required
-                        className="w-full"
+                        className="w-full h-12 bg-muted/50 border-border focus:border-primary transition-colors"
                       />
                     </div>
                   </div>
                   
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-foreground">
+                      Your Message *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project or just say hello!"
+                      placeholder="Tell me about your project, timeline, budget, or just say hello! I'm excited to learn about your vision and discuss how we can bring it to life."
                       rows={6}
                       required
-                      className="w-full resize-none"
+                      className="w-full resize-none bg-muted/50 border-border focus:border-primary transition-colors"
                     />
                   </div>
                   
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="btn-primary w-full py-3 text-lg font-semibold"
+                    className="btn-primary w-full py-4 text-lg font-semibold group hover:scale-105 transition-all duration-300"
                   >
                     {isSubmitting ? (
-                      'Sending...'
+                      <span className="flex items-center">
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+                        Sending Message...
+                      </span>
                     ) : (
-                      <>
-                        <Send className="h-5 w-5 mr-2" />
+                      <span className="flex items-center">
+                        <Send className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         Send Message
-                      </>
+                      </span>
                     )}
                   </Button>
                 </form>
               </div>
             </div>
 
-            {/* Contact Information */}
+            {/* Contact Information Sidebar */}
             <div className="space-y-8">
               {/* Contact Details */}
-              <div className="card-elegant p-8 animate-scale-in">
-                <h3 className="text-xl font-bold mb-6">Get In Touch</h3>
+              <div className="card-elegant p-8 animate-scale-in bg-gradient-subtle">
+                <h3 className="text-xl font-bold mb-6 text-gradient">Contact Information</h3>
                 
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
-                    <div key={info.label} className="flex items-start">
-                      <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <span className="text-primary">{info.icon}</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">{info.label}</p>
-                        {info.link ? (
-                          <a 
-                            href={info.link}
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {info.value}
-                          </a>
-                        ) : (
-                          <p className="text-muted-foreground">{info.value}</p>
-                        )}
-                      </div>
+                    <div key={info.label} className="group">
+                      {info.link ? (
+                        <a 
+                          href={info.link}
+                          className="flex items-start p-4 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                        >
+                          <div className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                            <span className="text-white">{info.icon}</span>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                              {info.label}
+                            </p>
+                            <p className="text-sm text-muted-foreground mb-1">
+                              {info.description}
+                            </p>
+                            <p className="text-sm font-medium text-primary">
+                              {info.value}
+                            </p>
+                          </div>
+                        </a>
+                      ) : (
+                        <div className="flex items-start p-4 rounded-xl border border-border">
+                          <div className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}>
+                            <span className="text-white">{info.icon}</span>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-foreground">{info.label}</p>
+                            <p className="text-sm text-muted-foreground mb-1">{info.description}</p>
+                            <p className="text-sm font-medium text-primary">{info.value}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -208,7 +277,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className="card-elegant p-8 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <h3 className="text-xl font-bold mb-6">Connect Online</h3>
+                <h3 className="text-xl font-bold mb-6 text-gradient">Connect Online</h3>
                 
                 <div className="space-y-4">
                   {socialLinks.map((social, index) => (
@@ -217,15 +286,19 @@ const Contact = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                      className="flex items-center p-4 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                     >
-                      <span className={`${social.color} group-hover:text-primary mr-3`}>
-                        {social.icon}
-                      </span>
-                      <span className="font-medium group-hover:text-primary transition-colors">
-                        {social.label}
-                      </span>
-                      <ExternalLink className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className={`w-12 h-12 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <span className="text-white">{social.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {social.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-1">{social.description}</p>
+                        <p className="text-sm font-medium text-primary">{social.username}</p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-300" />
                     </a>
                   ))}
                 </div>
@@ -233,18 +306,29 @@ const Contact = () => {
 
               {/* Resume Download */}
               <div className="card-elegant p-8 animate-scale-in" style={{ animationDelay: '0.4s' }}>
-                <h3 className="text-xl font-bold mb-4">Resume</h3>
-                <p className="text-muted-foreground mb-6">
-                  Download my complete resume with detailed experience and project information.
-                </p>
-                <Button variant="outline" className="btn-secondary w-full">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Resume
-                </Button>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                    <Download className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gradient">Download Resume</h3>
+                  <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                    Get my complete resume with detailed experience, projects, and technical skills information.
+                  </p>
+                  <Button variant="outline" className="btn-secondary w-full group hover:scale-105 transition-all duration-300">
+                    <Download className="h-4 w-4 mr-2 group-hover:-translate-y-1 transition-transform duration-300" />
+                    Download PDF
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Background Effects */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }}></div>
       </div>
     </section>
   );
