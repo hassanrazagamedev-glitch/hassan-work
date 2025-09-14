@@ -9,8 +9,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'Idle Restaurant Tycoon: Match3',
-      description: '🍔 Idle Restaurant Tycoon: Match3 – Build Your Food Empire, One Match at a Time! 🍕
-Step into the delicious world of Idle Restaurant Tycoon: Match3, the ultimate fusion of idle simulation and satisfying match3 puzzle gameplay. If you’ve ever dreamed of building your own restaurant empire while tackling entertaining food-themed puzzles, then restaurant tycoon match3 is the game you’ve been waiting for.',
+      description: '🍔 Idle Restaurant Tycoon: Match3 – Build Your Food Empire, One Match at a Time! 🍕.Step into the delicious world of Idle Restaurant Tycoon: Match3, the ultimate fusion of idle simulation and satisfying match3 puzzle gameplay. If you’ve ever dreamed of building your own restaurant empire while tackling entertaining food-themed puzzles, then restaurant tycoon match3 is the game you’ve been waiting for.',
       image: dirtbikeImage,
       tags: ['Unity 3D', 'Idle', 'Mobile', 'Match3'],
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.idle.restaurant.food.tycoon.game&hl=en_US',
