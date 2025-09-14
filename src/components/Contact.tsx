@@ -17,6 +17,20 @@ import {
   CheckCircle
 } from 'lucide-react';
 
+const FiverrIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-5 w-5 fill-white">
+    <circle cx="50" cy="50" r="50" fill="currentColor" />
+    <text x="50%" y="55%" textAnchor="middle" fontSize="40" fontWeight="bold" fill="black">f</text>
+  </svg>
+);
+
+const UpworkIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-5 w-5 fill-white">
+    <circle cx="50" cy="50" r="50" fill="currentColor" />
+    <text x="50%" y="55%" textAnchor="middle" fontSize="28" fontWeight="bold" fill="black">U</text>
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -91,6 +105,25 @@ const Contact = () => {
       url: 'https://github.com/muhammad-hassan-raza',
       color: 'from-gray-700 to-gray-800',
       description: 'Open source projects'
+    }
+  ];
+
+  const hireLinks = [
+    {
+      icon: <FiverrIcon />,
+      label: 'Fiverr',
+      username: '@your-fiverr-username',
+      url: 'https://www.fiverr.com/your-fiverr-username',
+      color: 'from-green-500 to-emerald-600',
+      description: 'Freelance game dev services'
+    },
+    {
+      icon: <UpworkIcon />,
+      label: 'Upwork',
+      username: '@your-upwork-username',
+      url: 'https://www.upwork.com/freelancers/~your-upwork-id',
+      color: 'from-teal-500 to-cyan-600',
+      description: 'Hire me for long-term projects'
     }
   ];
 
@@ -228,7 +261,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold mb-6 text-gradient">Contact Information</h3>
                 
                 <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
+                  {contactInfo.map((info) => (
                     <div key={info.label} className="group">
                       {info.link ? (
                         <a 
@@ -272,7 +305,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold mb-6 text-gradient">Connect Online</h3>
                 
                 <div className="space-y-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.url}
@@ -317,6 +350,35 @@ const Contact = () => {
                       Download PDF
                     </a>
                   </Button>
+                </div>
+              </div>
+
+              {/* Hire Me Section */}
+              <div className="card-elegant p-8 animate-scale-in" style={{ animationDelay: '0.6s' }}>
+                <h3 className="text-xl font-bold mb-6 text-gradient">Hire Me</h3>
+                
+                <div className="space-y-4">
+                  {hireLinks.map((site) => (
+                    <a
+                      key={site.label}
+                      href={site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center p-4 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-r ${site.color} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <span className="text-white">{site.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {site.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-1">{site.description}</p>
+                        <p className="text-sm font-medium text-primary">{site.username}</p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-300" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
