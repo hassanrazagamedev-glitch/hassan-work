@@ -13,8 +13,8 @@ const Hero = () => {
 
   const stats = [
     { value: '5+', label: 'Years Experience', icon: <Code className="h-5 w-5" /> },
-    { value: '10+', label: 'Games Published', icon: <Gamepad2 className="h-5 w-5" /> },
-    { value: '1M+', label: 'Downloads', icon: <Play className="h-5 w-5" /> },
+    { value: '50+', label: 'Games Published', icon: <Gamepad2 className="h-5 w-5" /> },
+    { value: '2M+', label: 'Downloads', icon: <Play className="h-5 w-5" /> },
   ];
 
   return (
