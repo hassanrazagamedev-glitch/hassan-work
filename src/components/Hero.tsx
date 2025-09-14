@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown, ExternalLink, Download, Play, Code, Gamepad2 } from 'lucide-react';
-import heroImage from '@/assets/hero-portrait.jpg';
+import profileImage from '@/assets/profile-image.png';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -110,7 +110,7 @@ const Hero = () => {
                 {/* Profile Image */}
                 <div className="absolute inset-4 rounded-full overflow-hidden hero-glow">
                   <img 
-                    src={heroImage} 
+                    src={profileImage} 
                     alt="Muhammad Hassan Raza - Game Developer"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   />
