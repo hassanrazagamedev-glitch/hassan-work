@@ -4,7 +4,7 @@ import dirtbikeImage from '@/assets/project-dirtbike.jpg';
 import differenceImage from '@/assets/project-difference.jpg';
 import drawImage from '@/assets/project-draw.jpg';
 import sniperImage from '@/assets/project-sniper.jpg';
-import rollImage from '@/assets/project-sniper.jpg';
+import rollImage from '@/assets/project-rolling.jpg';
 
 const Projects = () => {
   const projects = [
