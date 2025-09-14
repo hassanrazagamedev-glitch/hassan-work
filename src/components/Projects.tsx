@@ -4,6 +4,7 @@ import dirtbikeImage from '@/assets/project-dirtbike.jpg';
 import differenceImage from '@/assets/project-difference.jpg';
 import drawImage from '@/assets/project-draw.jpg';
 import sniperImage from '@/assets/project-sniper.jpg';
+import rollImage from '@/assets/project-sniper.jpg';
 
 const Projects = () => {
   const projects = [
@@ -44,6 +45,17 @@ const Projects = () => {
       title: 'Real Sniper Gun Shooting Epic Games',
       description: 'Realistic first-person shooter with precision aiming mechanics, multiple weapon systems, and challenging missions. Features advanced AI, stunning 3D environments, and competitive multiplayer modes.',
       image: sniperImage,
+      tags: ['Unity 3D', 'FPS', 'Action', 'Shooting'],
+      playStoreUrl: 'https://play.google.com',
+      featured: false,
+      stats: { downloads: '1M+', rating: 4.4, users: '500K+' },
+      color: 'from-purple-500 to-pink-500',
+      category: 'Action FPS'
+    },
+    {
+      title: 'Balls Game - Rolling 3D',
+      description: 'Realistic first-person shooter with precision aiming mechanics, multiple weapon systems, and challenging missions. Features advanced AI, stunning 3D environments, and competitive multiplayer modes.',
+      image: rollImage,
       tags: ['Unity 3D', 'FPS', 'Action', 'Shooting'],
       playStoreUrl: 'https://play.google.com',
       featured: false,
