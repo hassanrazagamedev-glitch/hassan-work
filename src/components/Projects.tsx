@@ -9,14 +9,15 @@ const Projects = () => {
   const projects = [
     {
       title: 'Idle Restaurant Tycoon: Match3',
-      description: 'High-octane 3D motorcycle racing game featuring realistic physics, dynamic weather systems, and challenging off-road terrain. Built with Unity and optimized for mobile platforms with advanced performance techniques.',
+      description: '🍔 Idle Restaurant Tycoon: Match3 – Build Your Food Empire, One Match at a Time! 🍕
+Step into the delicious world of Idle Restaurant Tycoon: Match3, the ultimate fusion of idle simulation and satisfying match3 puzzle gameplay. If you’ve ever dreamed of building your own restaurant empire while tackling entertaining food-themed puzzles, then restaurant tycoon match3 is the game you’ve been waiting for.',
       image: dirtbikeImage,
-      tags: ['Unity 3D', 'Physics', 'Mobile', 'Racing'],
+      tags: ['Unity 3D', 'Idle', 'Mobile', 'Match3'],
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.idle.restaurant.food.tycoon.game&hl=en_US',
       featured: true,
-      stats: { downloads: '100K+', rating: 4.5, users: '50K+' },
+      stats: { downloads: '50K+', rating: 4.5, users: '50K+' },
       color: 'from-orange-500 to-red-500',
-      category: '3D Racing'
+      category: 'Idle'
     },
     {
       title: 'Find the Difference',
