@@ -91,14 +91,6 @@ const Contact = () => {
       url: 'https://github.com/muhammad-hassan-raza',
       color: 'from-gray-700 to-gray-800',
       description: 'Open source projects'
-    },
-    {
-      icon: <ExternalLink className="h-5 w-5" />,
-      label: 'Play Store',
-      username: 'Hassan Raza Games',
-      url: 'https://play.google.com/store/apps/developer?id=Hassan+Raza',
-      color: 'from-green-600 to-green-700',
-      description: 'Published games'
     }
   ];
 
