@@ -11,7 +11,7 @@ const Projects = () => {
   {
     title: 'Idle Restaurant Tycoon: Match3',
     description: '🍔 Idle Restaurant Tycoon: Match3 – Build your food empire, one match at a time! A hybrid of idle simulation and match-3 puzzle gameplay where you manage restaurants while solving tasty puzzles.',
-    image: restaurantImage, // Replace with proper restaurant image asset
+    image: dirtbikeImage, // Replace with proper restaurant image asset
     tags: ['Unity 3D', 'Idle', 'Mobile', 'Match3'],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.idle.restaurant.food.tycoon.game&hl=en_US',
     featured: true,
