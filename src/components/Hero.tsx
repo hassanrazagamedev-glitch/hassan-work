@@ -52,17 +52,16 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
-                onClick={scrollToProjects}
-                size="lg"
-                className="btn-primary px-8 py-4 text-lg font-semibold group relative overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  View My Projects
-                  <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Button>
+            <Button 
+              onClick={scrollToProjects}
+              size="lg"
+              className="btn-primary px-8 py-4 text-lg font-semibold group"
+            >
+              <span className="flex items-center">
+                View My Projects
+                <ExternalLink className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+              </span>
+            </Button>
               <Button 
                 variant="outline" 
                 size="lg"
