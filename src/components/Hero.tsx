@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, ExternalLink, Download, Play, Code, Gamepad2 } from 'lucide-react';
 import profileImage from '@/assets/profile-image.png';
 
 const Hero = () => {
+  // 🔥 Rotating status messages
+  const messages = [
+    'Available for new opportunities',
+    'Open to collaborations',
+    'Let’s build something amazing 🚀',
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % messages.length);
+    }, 4000); // change every 4s
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -24,12 +40,20 @@ const Hero = () => {
     >
       <div className="container mx-auto section-padding">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
           {/* Text Content */}
           <div className="lg:col-span-7 animate-fade-in">
-            {/* Status Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
-              Available for new opportunities
+            
+            {/* 🔥 Dynamic Status Badge */}
+            <div className="relative inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 overflow-hidden">
+              {/* glowing green aura */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-24 h-24 bg-green-500/20 rounded-full blur-2xl"></div>
+              </div>
+              <div className="relative flex items-center">
+                <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                {messages[index]}
+              </div>
             </div>
 
             <div className="mb-8">
